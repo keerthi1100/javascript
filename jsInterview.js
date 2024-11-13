@@ -65,6 +65,41 @@ console.log(typeof(100.000));
 console.log(typeof('true'));
 
 
+console.log('-------------------------------------------------------------------');
+
+const obj = {
+    foo: 'Bob',
+    fun: function(){
+        let another = this;
+        console.log('this in function', this);
+        console.log('this is for this',this.foo);
+        console.log('this is for this',another.foo);
+
+        function bb(){
+
+            /* 
+            In the posted example the second function (the one with this.foo) 
+            is not invoked using the x.f() form and so this is the window object
+            here in this closure this will point to window as its not invoked with context.fun()
+
+            so you can retain this by assinging another coz closer we can access to context of this
+
+            */
+            console.log('this inside bb', this);
+            
+            console.log('this is for inside nexte fun',this.foo);
+            console.log('this is for this inside nested fun',another.foo);
+        }  
+        
+        bb();
+    }
+}
+
+obj.fun();
+
+
+
+
 
 
 

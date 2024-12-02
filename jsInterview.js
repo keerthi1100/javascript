@@ -82,7 +82,7 @@ const obj = {
             is not invoked using the x.f() form and so this is the window object
             here in this closure this will point to window as its not invoked with context.fun()
 
-            so you can retain this by assinging another coz closer we can access to context of this
+            so you can retain this by assinging another coz closer we can access to context of this 
 
             */
             console.log('this inside bb', this);
